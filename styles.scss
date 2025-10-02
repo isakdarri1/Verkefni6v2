@@ -2,8 +2,10 @@
  * Grunn sass skrá, sækir aðrar skrár í *réttri* röð.
  * Sjá skjölun í hverri skrá fyrir sig.
  */
-@use "styles/config";
 
 // TODO bæta við fleiri skrám eftir þörfum
 
-@use "styles/grid";
+@use "styles/grid.scss";
+@use 'styles/reset.scss';
+@use 'styles/config.scss';
+@use 'styles/old.scss';
