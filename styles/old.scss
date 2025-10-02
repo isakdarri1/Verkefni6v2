@@ -16,14 +16,14 @@ html {
 }
 
 @font-face {
-  font-family: "Gelasio";
+  font-family: Gelasio;
   font-style: normal;
   font-weight: 400;
   src: url("./fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
 }
 
 @font-face {
-  font-family: "Gelasio";
+  font-family: Gelasio;
   font-weight: 700;
   src: url("./fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
 }
@@ -63,13 +63,12 @@ select {
 .button {
   display: inline-block;
   padding: calc(var(--spacing) * 0.5) var(--spacing);
+  font-size: 1rem;
+  color: var(--color-background-primary);
+  text-decoration: none;
+  background-color: var(--color-background-secondary);
   border: 0;
   border-radius: var(--border-radius-regular);
-
-  color: var(--color-background-primary);
-  background-color: var(--color-background-secondary);
-  font-size: 1rem;
-  text-decoration: none;
 }
 
 /**
@@ -82,12 +81,11 @@ select {
 .wrapper {
   display: flex;
   flex-direction: column;
-
-  /* pláss fyrir nav, það er nákvæmlega svona hátt */
-  margin-top: 4rem;
   width: 100%;
   min-height: 100vh;
 
+  /* pláss fyrir nav, það er nákvæmlega svona hátt */
+  margin-top: 4rem;
   background-color: var(--color-background-primary);
 }
 
@@ -100,33 +98,27 @@ nav {
   top: 0;
   left: 0;
   z-index: 10;
-
   width: 100vw;
   height: var(--height-nav);
   overflow: hidden;
-
   background-color: var(--color-background-primary);
   border-bottom: var(--border-nav);
 }
 
 nav ul {
   display: flex;
-
-  width: 100%;
-  padding: var(--spacing);
-
-  overflow: auto;
-
   gap: calc(var(--spacing) * 2);
   justify-content: center;
-
+  width: 100%;
+  padding: var(--spacing);
+  overflow: auto;
   list-style: none;
 }
 
 nav ul li {
-  white-space: nowrap;
-  font-size: var(--font-size-headings);
   font-family: var(--font-family-heading);
+  font-size: var(--font-size-headings);
+  white-space: nowrap;
 }
 
 nav a {
@@ -158,50 +150,41 @@ header h1 {
 /** Meginmál og efni forsíðu **/
 
 main {
-  margin: 0 auto calc(var(--spacing) * 2) auto;
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
   width: 100%;
   max-width: var(--max-width);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+  margin: 0 auto calc(var(--spacing) * 2);
 }
 
 /** Forsíða inngangsmynd **/
 
 .intro {
-  display: flex;
   position: relative;
-
-  margin-bottom: calc(var(--spacing) * 2);
+  display: flex;
   min-height: calc(100vh - var(--height-nav));
-
+  margin-bottom: calc(var(--spacing) * 2);
   color: var(--color-background-primary);
-
-  background-position: 50% 50%;
-  background-attachment: fixed;
+  background-image: url("./myndir/background.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
   background-size: cover;
-  background-image: url(./myndir/background.jpg);
 }
 
 .intro .protection {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
-
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgb(0 0 0 / 35%);
 }
 
 .intro .content {
   position: relative;
   z-index: 2;
-
-  margin: auto;
   align-items: center;
   justify-content: center;
-
+  margin: auto;
   font-size: 2em;
 }
 
@@ -231,50 +214,48 @@ main {
   width: 100%;
 }
 
-.card .card__header {
+.card .card-header {
   width: 100%;
 }
 
-.card .card__content {
-  flex: 1;
-
+.card .card-content {
   display: flex;
-  gap: var(--spacing);
+  flex: 1;
   flex-direction: column;
+  gap: var(--spacing);
 }
 
-.card .card__text {
+.card .card-text {
   flex: 1;
 }
 
-.card .card__image {
+.card .card-image {
   flex-basis: 40%;
   width: 100%;
 }
 
-.card .card__kicker {
+.card .card-kicker {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.card .card__title {
+.card .card-title {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
 
-.card .card__image img {
+.card .card-image img {
   display: block;
-
-  border-top-left-radius: var(--border-radius-regular);
-  border-top-right-radius: var(--border-radius-regular);
   width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
 }
 
-.card:nth-child(2n) .card__image {
+.card:nth-child(2n) .card-image {
   order: -1;
 }
 
@@ -287,9 +268,9 @@ main {
 /** Töflur **/
 
 table {
+  width: 100%;
   margin-bottom: var(--spacing);
   border-spacing: 0;
-  width: 100%;
 }
 
 table th,
@@ -308,7 +289,6 @@ form {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing);
-
   width: 100%;
 }
 
@@ -339,17 +319,16 @@ fieldset div span {
 fieldset input,
 fieldset select,
 fieldset textarea {
-  padding: calc(var(--spacing) / 2);
   width: 100%;
-  border: 1px solid #000000;
-
-  background-color: #ffffff;
+  padding: calc(var(--spacing) / 2);
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 fieldset input[type="checkbox"] {
   display: inline-block;
-  margin-right: calc(var(--spacing) / 2);
   width: auto;
+  margin-right: calc(var(--spacing) / 2);
 }
 
 .submit {
@@ -363,11 +342,9 @@ footer {
   flex-wrap: wrap;
   gap: calc(var(--spacing) * 2);
   justify-content: center;
-
   padding: var(--spacing);
-
-  background-color: #ff9999;
   text-align: center;
+  background-color: #f99;
 }
 
 footer ul {

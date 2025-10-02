@@ -11,14 +11,14 @@ $grid: false;
 }
 
 /* hjálpar class sem felur sjónrænt en skjálesarar lesa */
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+.sr-only:not(:focus, :active) {
+  position: absolute;
+  width: 1px;
   height: 1px;
   overflow: hidden;
-  position: absolute;
   white-space: nowrap;
-  width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 }
 
 /** Stillingar **/
@@ -47,7 +47,6 @@ $grid: false;
   /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
   --vertical-space-small: calc(var(--gutter) * 1);
   --vertical-space-large: calc(var(--gutter) * 1.5);
-
   --vertical-space: var(--vertical-space-small);
 
   /* Border breiddir */
@@ -55,10 +54,10 @@ $grid: false;
   --border-radius-regular: 5px;
 
   /* Litir */
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #000000;
-  --color-accent: #ff9999;
-  --color-protection: rgba(0, 0, 0, 0.35);
+  --color-background-primary: #fff;
+  --color-background-secondary: #000;
+  --color-accent: #f99;
+  --color-protection: rgb(0 0 0 / 35%);
 
   /* Letur stillingar */
   --font-base-size: 1rem;
